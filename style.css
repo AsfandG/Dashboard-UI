@@ -49,6 +49,12 @@ nav {
   width: 15.625rem;
   padding: 10px 14px;
   background-color: var(--panel-color);
+  border-right: 1px solid var(--border-color);
+  transition: var(--trans-05);
+}
+
+nav.close {
+  width: 4.625rem;
 }
 nav .logo-name {
   display: flex;
@@ -71,6 +77,12 @@ nav .logo-name .logo {
   font-weight: 600;
   color: var(--text-color);
   margin-left: 0.9rem;
+  transition: var(--trans-03);
+}
+
+nav.close .logo {
+  opacity: 0;
+  pointer-events: none;
 }
 
 nav .menu-items {
@@ -93,8 +105,8 @@ nav .menu-items {
   position: relative;
 }
 
-.menu-items i {
-  width: 3rem;
+.menu-items li a i {
+  min-width: 2.8125rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,6 +119,12 @@ nav .menu-items {
   font-size: 16px;
   font-weight: 400;
   color: var(--back-light-color);
+  transition: var(--trans-05);
+}
+
+nav.close li a .nav-item {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .nav-links li a:hover i,
@@ -162,6 +180,39 @@ nav .menu-items {
   transition: var(--trans-03);
 }
 
+.menu-items .logout-mode {
+  border-top: 1px solid var(--border-color);
+  padding: 10px;
+}
+
 body.dark .switch::before {
   left: 25px;
+}
+
+/* dashboard main page css */
+.dashboard {
+  position: relative;
+  left: 15.625rem;
+  background-color: var(--panel-color);
+  width: calc(100% - 15.625rem);
+  height: 100vh;
+  padding: 0.625rem 0.875rem;
+}
+
+.dashboard .top {
+  position: fixed;
+  top: 0;
+  padding: 0.625rem 0.875rem;
+  left: 15.625rem;
+  width: calc(100% - 15.625rem);
+  background: var(--panel-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-toggle {
+  font-size: 1.675rem;
+  cursor: pointer;
+  color: var(--text-color);
 }
