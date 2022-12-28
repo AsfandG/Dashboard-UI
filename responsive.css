@@ -1,0 +1,8 @@
+@media (max-width: 1000px) {
+  nav {
+    width: 4.5625rem;
+  }
+  /* nav.close {
+    width: 15.625rem;
+  } */
+}

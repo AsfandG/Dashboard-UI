@@ -24,8 +24,7 @@
 }
 
 body {
-  min-height: 100vh;
-  background-color: var(--primary-color);
+  height: 100vh;
 }
 
 body.dark {
@@ -312,35 +311,128 @@ nav.close ~ .dashboard .top {
 
 .dashboard_body .boxes {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
 .dashboard_body .boxes .box {
-  width: calc(100% / 3 -15px);
+  width: calc(100% / 3 - 15px);
   background: var(--box1-color);
   padding: 0.875rem 1.375rem;
   display: flex;
   align-items: center;
+  transition: var(--trans-05);
+  gap: 10px;
   flex-direction: column;
   border-radius: 6px;
 }
 
-.box .box_text {
+.boxes .box .box_text {
   white-space: nowrap;
   font-weight: 600;
   color: var(--text-color);
   font-size: 18px;
 }
 
-.box .box_number {
+.boxes .box .box_number {
   font-weight: 600;
   font-size: 5rem;
   color: var(--text-color);
   font-size: 2.6rem;
 }
 
-.box i {
+.boxes .box i {
   font-size: 2.5rem;
   color: var(--text-color);
+}
+
+.boxes .box.box2 {
+  background-color: var(--box2-color);
+}
+
+.boxes .box.box3 {
+  background-color: var(--box3-color);
+}
+
+.dashboard_body .activity .activity_data {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 100%;
+}
+
+.activity_data .data {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity .data_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.activity_data .data_list {
+  margin-top: 15px;
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+@media (max-width: 1000px) {
+  nav {
+    width: 4.5625rem;
+  }
+  nav.close {
+    width: 15.625rem;
+  }
+  nav .logo {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close .logo {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav li a .nav-item {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close li a .nav-item {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav ~ .dashboard {
+    left: 4.5625rem;
+    width: calc(100% - 4.5625rem);
+  }
+  nav.close ~ .dashboard {
+    left: 15.625rem;
+    width: calc(100% - 15.625rem);
+  }
+  nav ~ .dashboard .top {
+    left: 4.5625rem;
+    width: calc(100% - 4.5625rem);
+  }
+  nav.close ~ .dashboard .top {
+    left: 15.625rem;
+    width: calc(100% - 15.625rem);
+  }
+  .activity .activity_data {
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 780px) {
+  .dashboard_body .boxes .box {
+    width: calc(100% / 2 - 15px);
+    margin-top: 15px;
+  }
+}
+@media (max-width: 560px) {
+  .dashboard_body .boxes .box {
+    width: 100%;
+  }
 }
